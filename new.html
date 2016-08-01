@@ -1,12 +1,55 @@
-<html>
+<!doctype html>
+
+<html lang="en">
 <head>
 
+  <meta charset="utf-8">
+  <title>hide demo</title>
+  <style>
+  div {
+
+    background: #ece023;
+
+    width: 30px;
+
+    height: 40px;
+
+    margin: 2px;
+
+    float: left;
+
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
-  <body style="background-color:#424242; color:white; text-align:center; font-size:28px;">
-  
-  <div>
-  hi
-  </div>
-  
-  </body>    
+
+<body style="background-color:#424242; text-alig:center; font-siz:22px; color:white;">
+<p>CLICK ON THE YELLOW BLOCK</p>
+<div></div>
+
+<script>
+
+for ( var i = 0; i < 5; i++ ) {
+
+  $( "<div>" ).appendTo( document.body );
+
+}
+
+$( "div" ).click(function() {
+
+  $( this ).hide( 2000, function() {
+
+    $( this ).remove();
+
+  });
+
+});
+
+</script>
+
+ 
+
+</body>
+
 </html>
+
