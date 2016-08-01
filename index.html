@@ -30,8 +30,36 @@ if(popupWindow && !popupWindow.closed)
 popupWindow.focus();
 }
 </script>
+
+<script type="text/javascript">
+var new_window;
+function winOpen(){
+    $(".layer").show();
+    new_window=window.open(srcurl,'','height=750,width=700,left=300,top=200');
+}
+
+$(document).ready(function(){
+    $(".layout").click(function(e) {
+       new_window.focus();
+   }
+});
+    
+    function submit(){
+        var doc = window.opener.document,
+        doc.getElementById("layer").style.display="none";
+         window.close();
+    }   
+
+   window.onbeforeunload = function(){
+        var doc = window.opener.document;
+        doc.getElementById("layout").style.display="none";
+   }
+</script>
+
 </head>
 <body onFocus="parent_disable();" onclick="parent_disable();">
     <a href="javascript:child_open()">Click me</a>
+    
+    <div class="layout" id="layout"></div>
 </body>    
 </html>
