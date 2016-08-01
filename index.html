@@ -1,65 +1,24 @@
 <html>
 <head>
-<style>
-.layer
-  {
-        position: fixed;
-        opacity: 0.7;
-        left: 0px;
-        top: 0px;
-        width: 100%;
-        height: 100%;
-        z-index: 999999;
-        background-color: #BEBEBE;
-        display: none;
-        cursor: not-allowed;
-  }
-</style>
 <script type="text/javascript">
 
 var popupWindow=null;
 
 function child_open()
 { 
-
-popupWindow =window.open('new.jsp',"_blank","directories=no, status=no, menubar=no, scrollbars=yes, resizable=no,width=600, height=280,top=200,left=200");
+if(popupWindow && !popupWindow.closed)
+   popupWindow.focus();
+else
+   popupWindow =window.open('new.html',"_blank","directories=no, status=no, menubar=no, scrollbars=yes, resizable=no,width=600, height=280,top=200,left=200");
 
 }
 function parent_disable() {
-if(popupWindow && !popupWindow.closed)
-popupWindow.focus();
+  if(popupWindow && !popupWindow.closed)
+    popupWindow.focus();
 }
 </script>
-
-<script type="text/javascript">
-var new_window;
-function winOpen(){
-    $(".layer").show();
-    new_window=window.open(srcurl,'','height=750,width=700,left=300,top=200');
-}
-
-$(document).ready(function(){
-    $(".layout").click(function(e) {
-       new_window.focus();
-   }
-});
-    
-    function submit(){
-        var doc = window.opener.document,
-        doc.getElementById("layer").style.display="none";
-         window.close();
-    }   
-
-   window.onbeforeunload = function(){
-        var doc = window.opener.document;
-        doc.getElementById("layout").style.display="none";
-   }
-</script>
-
 </head>
-<body onFocus="parent_disable();" onclick="parent_disable();">
-    <a href="javascript:child_open()">Click me</a>
-    
-    <div class="layout" id="layout"></div>
-</body>    
+  <body onFocus="parent_disable();" onclick="parent_disable();">
+     <a href="javascript:child_open()">Click me</a>
+  </body>    
 </html>
