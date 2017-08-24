@@ -1,24 +1,35 @@
-<html>
-<head>
-<script type="text/javascript">
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Hide Demo</title>
 
-var popupWindow=null;
+        <script type="text/javascript">
+            var popupWindow = null;
 
-function child_open()
-{ 
-if(popupWindow && !popupWindow.closed)
-   popupWindow.focus();
-else
-   popupWindow =window.open('new.html',"_blank","directories=no, status=no, menubar=no, scrollbars=yes, resizable=no,width=600, height=280,top=200,left=200");
+            function child_open() {
+                if (popupWindow && !popupWindow.closed)
+                    popupWindow.focus();
+                else
+                    popupWindow = window.open('new.html', "_blank", "directories=no, status=no, menubar=no, scrollbars=yes, resizable=no,width=600, height=280,top=200,left=200");
+            }
+            function parent_disable() {
+                if (popupWindow && !popupWindow.closed)
+                    popupWindow.focus();
+            }
+        </script>
+        <style>
+            body{background-color:#424242; text-alig:center; font-siz:22px; color:white;}
+        .wrap{text-align: center;margin-top:25%;}
+        .wrap h1 a{border:1px solid white;padding:10px 20px;border-radius:15px;background-color:gray;}
+        </style>
+    </head>
+    <body onFocus="parent_disable();" onclick="parent_disable();">
 
-}
-function parent_disable() {
-  if(popupWindow && !popupWindow.closed)
-    popupWindow.focus();
-}
-</script>
-</head>
-  <body onFocus="parent_disable();" onclick="parent_disable();">
-     <a href="javascript:child_open()">Click me</a>
-  </body>    
+
+        <div class="wrap">
+            <h1><a href="javascript:child_open()">Click me</a></h1>
+        </div>
+
+    </body> 
 </html>

@@ -1,55 +1,36 @@
-<!doctype html>
-
 <html lang="en">
-<head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Hide Demo</title>
 
-  <meta charset="utf-8">
-  <title>hide demo</title>
-  <style>
-  div {
+        <style>
+            body{background-color:#424242; text-alig:center; font-siz:22px; color:white;}
+            div {background: #ece023;width: 30px;height: 40px;margin: 2px;float: left;}
+        p{text-align: center;}
+        </style>
 
-    background: #ece023;
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
 
-    width: 30px;
+    <body>
+        <br>
+        <p>CLICK ON THE YELLOW BLOCK TO REVEAL THE NUMBERS</p>
+        
+        <center><div></div></center>
+        
+        <script>
+            for (var i = 0; i < 5; i++) {
+                $("<div>").appendTo(document.body);
+            }
 
-    height: 40px;
+            $("div").click(function () {
+                $(this).hide(2000, function () {
+                    $(this).remove();
+                });
+            });
+        </script>
 
-    margin: 2px;
-
-    float: left;
-
-  }
-  </style>
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-</head>
-
-<body style="background-color:#424242; text-alig:center; font-siz:22px; color:white;">
-<p>CLICK ON THE YELLOW BLOCK</p>
-<div></div>
-
-<script>
-
-for ( var i = 0; i < 5; i++ ) {
-
-  $( "<div>" ).appendTo( document.body );
-
-}
-
-$( "div" ).click(function() {
-
-  $( this ).hide( 2000, function() {
-
-    $( this ).remove();
-
-  });
-
-});
-
-</script>
-
- 
-
-</body>
-
+    </body>
 </html>
 
