@@ -5,9 +5,9 @@
         <title>Hide Demo</title>
 
         <style>
-            body{background-color:#424242; text-alig:center; font-siz:22px; color:white;}
-            div {background: #ece023;width: 30px;height: 40px;margin: 2px;float: left;}
-        p{text-align: center;}
+            body{background-color:#351c15;color:white;}
+            div {background: #ffb500;width: 30px;height: 40px;margin: 2px;float: left;}
+            p{font-family: "BerlingskeSans Serif",Georgia,Times,serif;font-size: 1.2em;border-bottom: 1px solid #ffb500;padding-bottom: 7px;margin: 20px 0 15px;text-transform: uppercase;}
         </style>
 
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -16,21 +16,20 @@
     <body>
         <br>
         <p>CLICK ON THE YELLOW BLOCK TO REVEAL THE NUMBERS</p>
-        
-        <center><div></div></center>
-        
-        <script>
-            for (var i = 0; i < 5; i++) {
-                $("<div>").appendTo(document.body);
-            }
 
-            $("div").click(function () {
-                $(this).hide(2000, function () {
-                    $(this).remove();
-                });
+
+    <script>
+        for (var i = 0; i < 5; i++) {
+            $("<div>").appendTo(document.body);
+        }
+
+        $("div").click(function () {
+            $(this).hide(2000, function () {
+                $(this).remove();
             });
-        </script>
+        });
+    </script>
 
-    </body>
+</body>
 </html>
 
